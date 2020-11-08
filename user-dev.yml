@@ -1,0 +1,26 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: microservice-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/a_sqdb?serverTimezone=Asia/Shanghai
+    username: a_squsr
+    password: 278mSq
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    database: mysql
+
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8181/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
